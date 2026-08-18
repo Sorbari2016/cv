@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Hero from "./Hero";
+import Form from "./Forms/Form";
+import { generalInfo } from "../utilities/utility";
 
 const Main = () => {
   // stored the click state of the cta button
@@ -12,7 +14,14 @@ const Main = () => {
 
   return (
     <main>
-      {isClicked ? <p>Nothing to see here</p> : <Hero onClick={handleClick} />}
+      {isClicked ? (
+        <Form
+          title={generalInfo.title}
+          formControls={generalInfo.getControls()}
+        />
+      ) : (
+        <Hero onClick={handleClick} />
+      )}
     </main>
   );
 };

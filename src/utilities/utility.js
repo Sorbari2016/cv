@@ -44,4 +44,14 @@ experience.addControl("Responsibilities", "textarea");
 experience.addControl("Start Date", "date");
 experience.addControl("End Date", "date");
 
-export { generalInfo, educationalInfo, experience };
+// Create a method to make a string of words camelCase
+const createCamelCase = (str) => {
+  return str
+    .trim() // Removes accidental spaces at the start or end
+    .toLowerCase()
+    .replace(/^[a-z]|\s+([a-z])/g, (match, group1) =>
+      group1 ? group1.toUpperCase() : match.toLowerCase(),
+    );
+};
+
+export { generalInfo, educationalInfo, experience, createCamelCase };
