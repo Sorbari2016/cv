@@ -1,4 +1,4 @@
-const Hero = () => {
+const Hero = ({ onClick }) => {
   return (
     <div id="hero">
       <section className="left">
@@ -9,7 +9,9 @@ const Hero = () => {
         <p className="subtitle">
           Get started in minutes — no credit card required.
         </p>
-        <button className="btn-cta">Create a New CV</button>
+        <button className="btn-cta" onClick={onClick}>
+          Create a New CV
+        </button>
       </section>
 
       <section className="right">
